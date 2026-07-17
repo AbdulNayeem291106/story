@@ -422,50 +422,44 @@ function showNextMessage(index){
 
 
 /* =========================
-   Add Message
+   Add Message - FIXED
 ========================= */
 
 
 function addMessage(message){
 
-
     const div =
     document.createElement("div");
 
-
     div.className =
+    `message ${message.type}`;
 
-    `message ${message.type} show`;
+    const msgContent = document.createElement("div");
+    msgContent.style.display = "flex";
+    msgContent.style.flexDirection = "column";
 
+    const textSpan = document.createElement("span");
+    textSpan.textContent = message.text;
 
+    const timeSpan = document.createElement("span");
+    timeSpan.className = "msg-time";
+    timeSpan.textContent = message.time;
 
-    div.innerHTML = `
+    if(message.type === "sent") {
+        const statusSpan = document.createElement("span");
+        statusSpan.className = "msg-status";
+        statusSpan.textContent = " ✓✓";
+        timeSpan.appendChild(statusSpan);
+    }
 
-        ${message.text}
-
-        <span class="msg-time">
-
-        ${message.time}
-
-        ${message.type==="sent"
-
-        ? '<span class="msg-status">✓✓</span>'
-
-        : ""}
-
-        </span>
-
-    `;
-
-
+    msgContent.appendChild(textSpan);
+    msgContent.appendChild(timeSpan);
+    div.appendChild(msgContent);
 
     chatBody.appendChild(div);
 
-
-
     chatBody.scrollTop =
     chatBody.scrollHeight;
-
 
 }
 
@@ -498,19 +492,14 @@ function showTyping(){
     typing.className =
     "message received typing";
 
-
-    typing.innerHTML=
-
-    `
-
-    <span></span>
-
-    <span></span>
-
-    <span></span>
-
+    const typingContent = document.createElement("div");
+    typingContent.innerHTML = `
+        <span></span>
+        <span></span>
+        <span></span>
     `;
 
+    typing.appendChild(typingContent);
 
     chatBody.appendChild(
         typing
@@ -877,13 +866,13 @@ function setBirthdayName(name){
 
     const birthdayText =
     document.getElementById(
-        "birthday-Akram"
+        "birthday-name"
     );
 
 
     const wishText =
     document.getElementById(
-        "wish-Akram"
+        "wish-name"
     );
 
 
@@ -914,7 +903,7 @@ function setBirthdayName(name){
 
 */
 
-setBirthdayName(birthdayAkram);
+setBirthdayName(birthdayName);
 
 
 
@@ -1031,7 +1020,6 @@ function createConfetti(){
 
 
 
-
 /* =========================
    Fireworks Generator
 ========================= */
@@ -1076,7 +1064,6 @@ function createFireworks(){
 
 
 }
-
 
 
 
