@@ -77,25 +77,21 @@
     display: flex;
     flex-direction: column;
     gap: 4px;
-    align-content: flex-start;
 }
 
 .message {
     display: flex;
     margin: 4px 0;
-    align-items: flex-end;
     animation: slideIn 0.3s ease;
     width: 100%;
 }
 
 .message.received {
     justify-content: flex-start;
-    padding-left: 8px;
 }
 
 .message.sent {
     justify-content: flex-end;
-    padding-right: 8px;
 }
 
 .message.received > * {
@@ -132,7 +128,6 @@
 
 .message.typing {
     justify-content: flex-start;
-    padding-left: 8px;
 }
 
 .message.typing > * {
