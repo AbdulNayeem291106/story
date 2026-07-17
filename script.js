@@ -276,7 +276,7 @@ const messages = [
 
         text:"Hey! 👋",
 
-        time:"06:00"
+        time:"09:00"
 
     },
 
@@ -287,7 +287,7 @@ const messages = [
 
         text:"Hi 😊",
 
-        time:"06:01"
+        time:"09:01"
 
     },
 
@@ -298,7 +298,7 @@ const messages = [
 
         text:"Do you know what day it is today?",
 
-        time:"06:01"
+        time:"09:01"
 
     },
 
@@ -309,7 +309,7 @@ const messages = [
 
         text:"No... Tell me 🤔",
 
-        time:"06:02"
+        time:"09:02"
 
     },
 
@@ -320,7 +320,7 @@ const messages = [
 
         text:"Today is our little champion's birthday! 🎂",
 
-        time:"06:02"
+        time:"09:02"
 
     },
 
@@ -331,7 +331,7 @@ const messages = [
 
         text:"Really? Let's surprise him! 🎉🎁",
 
-        time:"06:03"
+        time:"09:03"
 
     }
 
