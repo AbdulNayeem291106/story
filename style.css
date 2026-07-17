@@ -758,12 +758,31 @@ audio{
     animation: slideIn 0.3s ease;
 }
 
-.message.received {
-    justify-content: flex-start;
+/* Received (Left) */
+
+.received{
+
+    align-self:flex-start;
+
+    background:#202c33;
+
+    color:#fff;
+
+    border-top-left-radius:4px;
+
 }
 
-.message.sent {
-    justify-content: flex-end;
+/* Sent (Right) */
+
+.sent{
+
+    align-self:flex-end;
+
+    background:#005c4b;
+
+    color:#fff;
+
+    border-top-right-radius:4px;
 }
 
 .message.received {
