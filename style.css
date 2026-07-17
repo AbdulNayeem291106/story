@@ -757,6 +757,20 @@ audio{
     gap: 8px;
     animation: slideIn 0.3s ease;
 }
+/* Common Bubble */
+
+.message{
+
+    max-width:75%;
+
+    padding:10px 14px;
+
+    border-radius:12px;
+
+    word-wrap:break-word;
+
+    animation:messageAppear .3s ease forwards;
+}
 
 /* Received (Left) */
 
