@@ -1504,3 +1504,1830 @@ audio{
     }
 
   } 
+/* =====================================================
+   Part 2B-2B
+   Typing Indicator & Chat Animations
+===================================================== */
+
+/* Typing Bubble */
+
+.typing{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    width:70px;
+
+    padding:12px 14px;
+
+}
+
+/* Typing Dots */
+
+.typing span{
+
+    width:8px;
+
+    height:8px;
+
+    border-radius:50%;
+
+    background:#d7d7d7;
+
+    animation:typingDots 1.2s infinite ease-in-out;
+
+}
+
+/* Animation Delay */
+
+.typing span:nth-child(1){
+
+    animation-delay:0s;
+
+}
+
+.typing span:nth-child(2){
+
+    animation-delay:.2s;
+
+}
+
+.typing span:nth-child(3){
+
+    animation-delay:.4s;
+
+}
+
+/* Typing Animation */
+
+@keyframes typingDots{
+
+    0%{
+
+        transform:translateY(0);
+
+        opacity:.35;
+
+    }
+
+    50%{
+
+        transform:translateY(-5px);
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+        opacity:.35;
+
+    }
+
+}
+
+/* Chat Fade */
+
+.message{
+
+    opacity:0;
+
+}
+
+.message.show{
+
+    animation:messageAppear .45s ease forwards;
+
+}
+
+/* Message Animation */
+
+@keyframes messageAppear{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(12px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* Chat Scroll */
+
+.chat-body{
+
+    scroll-behavior:smooth;
+
+    overflow-y:auto;
+
+}
+
+/* Hide Scrollbar */
+
+.chat-body::-webkit-scrollbar{
+
+    width:0;
+
+}
+
+.chat-body{
+
+    scrollbar-width:none;
+
+}
+
+/* Typing Status */
+
+.chat-status.typing-status{
+
+    color:#53bdeb;
+
+    font-style:italic;
+
+}
+
+/* Emoji Size */
+
+.message{
+
+    font-size:15px;
+
+}
+
+.message emoji{
+
+    font-size:18px;
+
+}
+
+/* Space Between Consecutive Messages */
+
+.message + .message{
+
+    margin-top:4px;
+
+}
+
+/* Consecutive Messages from Same Side */
+
+.sent + .sent{
+
+    margin-top:2px;
+
+}
+
+.received + .received{
+
+    margin-top:2px;
+
+}
+
+/* Last Message Spacing */
+
+.chat-body::after{
+
+    content:"";
+
+    height:18px;
+
+    flex-shrink:0;
+
+} 
+/* =====================================================
+   Part 2C-1
+   Slideshow Layout
+===================================================== */
+
+
+/* ---------------------------
+   Slideshow Scenes
+---------------------------- */
+
+#slideshow-one,
+#slideshow-two,
+#ending{
+
+    background:#000;
+
+    overflow:hidden;
+
+}
+
+
+/* ---------------------------
+   Slideshow Image
+---------------------------- */
+
+#slide1,
+#slide2,
+#slide3{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    position:absolute;
+
+    inset:0;
+
+    opacity:1;
+
+    z-index:1;
+
+}
+
+
+/* ---------------------------
+   Image Dark Overlay
+---------------------------- */
+
+#slideshow-one::after,
+#slideshow-two::after,
+#ending::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    linear-gradient(
+
+        to bottom,
+
+        rgba(0,0,0,.15),
+
+        rgba(0,0,0,.45)
+
+    );
+
+    z-index:2;
+
+    pointer-events:none;
+
+}
+
+
+/* ---------------------------
+   Slideshow Container
+---------------------------- */
+
+.slideshow-container{
+
+    position:relative;
+
+    width:100%;
+
+    height:100%;
+
+    overflow:hidden;
+
+}
+
+
+/* ---------------------------
+   Image Fade Animation
+---------------------------- */
+
+.slide-fade{
+
+    animation:
+
+    slideFade 1.5s ease forwards;
+
+}
+
+
+@keyframes slideFade{
+
+
+    from{
+
+        opacity:0;
+
+        transform:scale(1.08);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+
+}
+
+
+/* ---------------------------
+   Image Zoom Effect
+---------------------------- */
+
+.slide-zoom{
+
+    animation:
+
+    slideZoom 6s linear forwards;
+
+}
+
+
+@keyframes slideZoom{
+
+
+    from{
+
+        transform:scale(1);
+
+    }
+
+
+    to{
+
+        transform:scale(1.12);
+
+    }
+
+
+}
+
+
+/* ---------------------------
+   Ken Burns Effect
+---------------------------- */
+
+.ken-burns{
+
+    animation:
+
+    kenBurns 8s ease-in-out infinite alternate;
+
+}
+
+
+@keyframes kenBurns{
+
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+
+    100%{
+
+        transform:scale(1.15);
+
+    }
+
+
+}
+
+
+/* ---------------------------
+   Image Caption
+---------------------------- */
+
+.image-caption{
+
+    position:absolute;
+
+    bottom:50px;
+
+    left:0;
+
+    width:100%;
+
+    text-align:center;
+
+    color:white;
+
+    font-size:22px;
+
+    font-weight:bold;
+
+    z-index:5;
+
+    padding:0 20px;
+
+    text-shadow:
+
+    0 3px 10px rgba(0,0,0,.8);
+
+}
+
+
+/* ---------------------------
+   Photo Counter
+---------------------------- */
+
+.photo-counter{
+
+    position:absolute;
+
+    top:25px;
+
+    right:20px;
+
+    color:white;
+
+    font-size:14px;
+
+    z-index:5;
+
+    background:rgba(0,0,0,.35);
+
+    padding:6px 12px;
+
+    border-radius:20px;
+
+}
+
+
+/* ---------------------------
+   Mobile Optimization
+---------------------------- */
+
+
+@media(max-width:360px){
+
+
+    .image-caption{
+
+        font-size:18px;
+
+        bottom:35px;
+
+    }
+
+
+}
+
+
+
+@media(min-width:480px){
+
+
+    .image-caption{
+
+        font-size:26px;
+
+    }
+
+
+} 
+/* =====================================================
+   Part 2C-2
+   Slideshow Animations & Sequence Effects
+===================================================== */
+
+
+/* ---------------------------
+   Photo Transition System
+---------------------------- */
+
+.slide-enter{
+
+    animation:photoEnter 1.2s ease forwards;
+
+}
+
+
+.slide-exit{
+
+    animation:photoExit 1s ease forwards;
+
+}
+
+
+/* New Photo Appears */
+
+@keyframes photoEnter{
+
+    from{
+
+        opacity:0;
+
+        transform:
+
+        scale(1.15)
+
+        translateY(20px);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:
+
+        scale(1)
+
+        translateY(0);
+
+    }
+
+}
+
+
+/* Old Photo Disappears */
+
+@keyframes photoExit{
+
+    from{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+
+    to{
+
+        opacity:0;
+
+        transform:scale(.95);
+
+    }
+
+}
+
+
+
+/* ---------------------------
+   Cinematic Zoom
+---------------------------- */
+
+
+.cinematic-zoom{
+
+    animation:
+
+    cinematicZoom 7s ease-in-out forwards;
+
+}
+
+
+@keyframes cinematicZoom{
+
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+
+    100%{
+
+        transform:scale(1.18);
+
+    }
+
+}
+
+
+
+/* ---------------------------
+   Left To Right Movement
+---------------------------- */
+
+
+.pan-left{
+
+
+    animation:
+
+    panLeft 8s ease forwards;
+
+
+}
+
+
+@keyframes panLeft{
+
+
+    from{
+
+        transform:
+
+        scale(1.1)
+
+        translateX(0);
+
+    }
+
+
+    to{
+
+        transform:
+
+        scale(1.1)
+
+        translateX(-30px);
+
+    }
+
+}
+
+
+
+/* ---------------------------
+   Right To Left Movement
+---------------------------- */
+
+
+.pan-right{
+
+
+    animation:
+
+    panRight 8s ease forwards;
+
+
+}
+
+
+@keyframes panRight{
+
+
+    from{
+
+        transform:
+
+        scale(1.1)
+
+        translateX(0);
+
+    }
+
+
+    to{
+
+        transform:
+
+        scale(1.1)
+
+        translateX(30px);
+
+    }
+
+}
+
+
+
+/* ---------------------------
+   Floating Hearts
+---------------------------- */
+
+
+.heart{
+
+    position:absolute;
+
+    bottom:-30px;
+
+    color:#ff5c8a;
+
+    font-size:22px;
+
+    z-index:10;
+
+    animation:
+
+    heartFloat 6s linear infinite;
+
+}
+
+
+
+@keyframes heartFloat{
+
+
+    0%{
+
+        transform:
+
+        translateY(0)
+
+        scale(.8);
+
+        opacity:0;
+
+    }
+
+
+    20%{
+
+        opacity:1;
+
+    }
+
+
+    100%{
+
+        transform:
+
+        translateY(-100vh)
+
+        scale(1.4);
+
+        opacity:0;
+
+    }
+
+}
+
+
+
+/* ---------------------------
+   Floating Balloons
+---------------------------- */
+
+
+.balloon{
+
+
+    position:absolute;
+
+    bottom:-80px;
+
+    width:45px;
+
+    height:60px;
+
+    border-radius:50%;
+
+    z-index:8;
+
+    animation:
+
+    balloonFloat 10s linear infinite;
+
+}
+
+
+
+@keyframes balloonFloat{
+
+
+    0%{
+
+        transform:
+
+        translateY(0);
+
+    }
+
+
+    100%{
+
+        transform:
+
+        translateY(-120vh);
+
+    }
+
+}
+
+
+
+/* Balloon String */
+
+
+.balloon::after{
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    width:1px;
+
+
+    height:40px;
+
+
+    background:#ffffff;
+
+
+    left:50%;
+
+
+    top:100%;
+
+
+}
+
+
+
+/* ---------------------------
+   Sparkle Effect
+---------------------------- */
+
+
+.sparkle{
+
+
+    position:absolute;
+
+
+    width:5px;
+
+
+    height:5px;
+
+
+    border-radius:50%;
+
+
+    background:white;
+
+
+    animation:
+
+    sparkleAnim 2s infinite;
+
+
+}
+
+
+
+@keyframes sparkleAnim{
+
+
+    0%{
+
+
+        opacity:0;
+
+
+        transform:scale(0);
+
+
+    }
+
+
+    50%{
+
+
+        opacity:1;
+
+
+        transform:scale(1.5);
+
+
+    }
+
+
+    100%{
+
+
+        opacity:0;
+
+
+        transform:scale(0);
+
+
+    }
+
+
+}
+
+
+
+/* ---------------------------
+   Photo Group Timing Classes
+---------------------------- */
+
+
+/* Photos 2-6 */
+
+.memory-slide{
+
+
+    animation-duration:5s;
+
+}
+
+
+
+/* Photos 7-9 */
+
+.birthday-slide{
+
+
+    animation-duration:5s;
+
+}
+
+
+
+/* Photos 10-11 */
+
+.final-slide{
+
+
+    animation-duration:6s;
+
+}
+
+
+
+/* ---------------------------
+   Mobile Performance
+---------------------------- */
+
+
+@media(max-width:480px){
+
+
+    .heart{
+
+        font-size:18px;
+
+    }
+
+
+    .balloon{
+
+        width:35px;
+
+        height:50px;
+
+    }
+
+
+} 
+/* =====================================================
+   Part 2D
+   Birthday Screen CSS
+===================================================== */
+
+
+/* ---------------------------
+   Birthday Scene
+---------------------------- */
+
+
+#birthday-title{
+
+    background:
+
+    radial-gradient(
+
+        circle,
+
+        #ff5f9e,
+
+        #8e2de2,
+
+        #000
+
+    );
+
+    overflow:hidden;
+
+    text-align:center;
+
+}
+
+
+
+/* ---------------------------
+   Birthday Text Container
+---------------------------- */
+
+
+#birthday-title h1{
+
+    position:relative;
+
+    z-index:5;
+
+    font-size:42px;
+
+    font-weight:800;
+
+    line-height:1.3;
+
+    color:#ffffff;
+
+    text-align:center;
+
+    animation:
+
+    birthdayReveal 1.5s ease forwards,
+
+    birthdayGlow 2s ease-in-out infinite;
+
+
+}
+
+
+
+/* Name Styling */
+
+
+#birthday-name{
+
+    display:inline-block;
+
+    font-size:50px;
+
+    color:#ffe66d;
+
+    text-transform:uppercase;
+
+    animation:
+
+    namePulse 2s infinite;
+
+
+}
+
+
+
+/* ---------------------------
+   Birthday Reveal Animation
+---------------------------- */
+
+
+@keyframes birthdayReveal{
+
+
+    from{
+
+
+        opacity:0;
+
+        transform:
+
+        scale(.4)
+
+        rotate(-10deg);
+
+
+    }
+
+
+    to{
+
+
+        opacity:1;
+
+        transform:
+
+        scale(1)
+
+        rotate(0);
+
+
+    }
+
+
+}
+
+
+
+/* ---------------------------
+   Text Glow
+---------------------------- */
+
+
+@keyframes birthdayGlow{
+
+
+    0%{
+
+
+        text-shadow:
+
+        0 0 10px #fff;
+
+
+    }
+
+
+    50%{
+
+
+        text-shadow:
+
+        0 0 25px #ffeb3b,
+
+        0 0 50px #ff4081;
+
+
+    }
+
+
+    100%{
+
+
+        text-shadow:
+
+        0 0 10px #fff;
+
+
+    }
+
+
+}
+
+
+
+/* ---------------------------
+   Name Pulse
+---------------------------- */
+
+
+@keyframes namePulse{
+
+
+    0%{
+
+
+        transform:scale(1);
+
+
+    }
+
+
+    50%{
+
+
+        transform:scale(1.08);
+
+
+    }
+
+
+    100%{
+
+
+        transform:scale(1);
+
+
+    }
+
+
+}
+
+
+
+/* ---------------------------
+   Confetti Container
+---------------------------- */
+
+
+.confetti-container{
+
+
+    position:absolute;
+
+    inset:0;
+
+    overflow:hidden;
+
+    z-index:2;
+
+
+}
+
+
+
+/* Confetti Pieces */
+
+
+.confetti{
+
+
+    position:absolute;
+
+    top:-20px;
+
+    width:10px;
+
+    height:18px;
+
+    animation:
+
+    confettiFall linear infinite;
+
+
+}
+
+
+
+/* Confetti Falling */
+
+
+@keyframes confettiFall{
+
+
+    from{
+
+
+        transform:
+
+        translateY(-20px)
+
+        rotate(0deg);
+
+
+    }
+
+
+    to{
+
+
+        transform:
+
+        translateY(110vh)
+
+        rotate(720deg);
+
+
+    }
+
+
+}
+
+
+
+/* ---------------------------
+   Birthday Sparkles
+---------------------------- */
+
+
+.birthday-sparkle{
+
+
+    position:absolute;
+
+    width:8px;
+
+    height:8px;
+
+    border-radius:50%;
+
+    background:white;
+
+    animation:
+
+    sparkleAnim 2s infinite;
+
+
+}
+
+
+
+/* ---------------------------
+   Floating Celebration Icons
+---------------------------- */
+
+
+.celebration-icon{
+
+
+    position:absolute;
+
+    font-size:35px;
+
+    animation:
+
+    floating 3s infinite;
+
+
+}
+
+
+
+/* ---------------------------
+   Mobile Optimization
+---------------------------- */
+
+
+@media(max-width:360px){
+
+
+    #birthday-title h1{
+
+
+        font-size:32px;
+
+
+    }
+
+
+    #birthday-name{
+
+
+        font-size:38px;
+
+
+    }
+
+
+}
+
+
+
+@media(min-width:480px){
+
+
+    #birthday-title h1{
+
+
+        font-size:52px;
+
+
+    }
+
+
+    #birthday-name{
+
+
+        font-size:60px;
+
+
+    }
+
+
+       } 
+
+/* =====================================================
+   Part 2E
+   Wishes + Fireworks + Responsive Polish CSS
+===================================================== */
+
+
+/* =========================
+   Wishes Screen
+========================= */
+
+
+#wishes{
+
+    background:
+
+    linear-gradient(
+
+        135deg,
+
+        #ff758c,
+
+        #ff7eb3,
+
+        #667eea
+
+    );
+
+    overflow:hidden;
+
+    text-align:center;
+
+}
+
+
+/* Wishes Box */
+
+
+.wish-box{
+
+    position:relative;
+
+    z-index:5;
+
+    width:90%;
+
+    max-width:420px;
+
+    padding:30px 20px;
+
+    border-radius:25px;
+
+    background:
+
+    rgba(255,255,255,.15);
+
+    backdrop-filter:blur(10px);
+
+    -webkit-backdrop-filter:blur(10px);
+
+    box-shadow:
+
+    0 8px 30px rgba(0,0,0,.25);
+
+    animation:
+
+    wishAppear 1.5s ease forwards;
+
+}
+
+
+
+/* Heading */
+
+
+.wish-box h2{
+
+    color:white;
+
+    font-size:30px;
+
+    margin-bottom:10px;
+
+}
+
+
+
+/* Name */
+
+
+.wish-box h1{
+
+    color:#ffe66d;
+
+    font-size:40px;
+
+    margin-bottom:20px;
+
+    animation:
+
+    namePulse 2s infinite;
+
+}
+
+
+
+/* Paragraph */
+
+
+.wish-box p{
+
+    color:white;
+
+    font-size:17px;
+
+    line-height:1.8;
+
+}
+
+
+
+/* Wish Appear */
+
+
+@keyframes wishAppear{
+
+
+    from{
+
+        opacity:0;
+
+        transform:
+
+        translateY(40px)
+
+        scale(.8);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:
+
+        translateY(0)
+
+        scale(1);
+
+    }
+
+
+}
+
+
+
+/* =========================
+   Ending Screen
+========================= */
+
+
+#ending{
+
+    background:#000;
+
+}
+
+
+
+/* Ending Image */
+
+
+#ending img{
+
+    animation:
+
+    cinematicZoom 8s ease infinite alternate;
+
+}
+
+
+
+/* =========================
+   Fireworks
+========================= */
+
+
+.fireworks{
+
+    position:absolute;
+
+    inset:0;
+
+    overflow:hidden;
+
+    z-index:5;
+
+}
+
+
+
+/* Firework Particle */
+
+
+.firework{
+
+    position:absolute;
+
+    width:6px;
+
+    height:6px;
+
+    border-radius:50%;
+
+    background:white;
+
+    animation:
+
+    explode 1.5s ease-out infinite;
+
+}
+
+
+
+/* Explosion Animation */
+
+
+@keyframes explode{
+
+
+    from{
+
+        transform:
+
+        scale(0);
+
+        opacity:1;
+
+    }
+
+
+    to{
+
+        transform:
+
+        translate(
+
+        var(--x),
+
+        var(--y)
+
+        )
+
+        scale(1.5);
+
+        opacity:0;
+
+    }
+
+
+}
+
+
+
+/* =========================
+   Floating Hearts Ending
+========================= */
+
+
+.end-heart{
+
+    position:absolute;
+
+    bottom:-20px;
+
+    font-size:25px;
+
+    animation:
+
+    endHeartFloat 7s linear infinite;
+
+}
+
+
+
+@keyframes endHeartFloat{
+
+
+    from{
+
+        transform:
+
+        translateY(0);
+
+        opacity:1;
+
+    }
+
+
+    to{
+
+        transform:
+
+        translateY(-110vh);
+
+        opacity:0;
+
+    }
+
+
+}
+
+
+
+/* =========================
+   Final Text Overlay
+========================= */
+
+
+.final-message{
+
+    position:absolute;
+
+    bottom:40px;
+
+    width:100%;
+
+    text-align:center;
+
+    color:white;
+
+    font-size:22px;
+
+    font-weight:bold;
+
+    z-index:10;
+
+    text-shadow:
+
+    0 0 15px black;
+
+}
+
+
+
+/* =========================
+   Global Mobile Polish
+========================= */
+
+
+@media(max-width:360px){
+
+
+    .wish-box{
+
+        width:92%;
+
+        padding:25px 15px;
+
+    }
+
+
+    .wish-box h2{
+
+        font-size:25px;
+
+    }
+
+
+    .wish-box h1{
+
+        font-size:34px;
+
+    }
+
+
+    .wish-box p{
+
+        font-size:15px;
+
+    }
+
+
+    .final-message{
+
+        font-size:17px;
+
+    }
+
+
+}
+
+
+
+@media(min-width:480px){
+
+
+    .wish-box{
+
+        max-width:500px;
+
+    }
+
+
+    .wish-box p{
+
+        font-size:20px;
+
+    }
+
+
+}
+
+
+
+/* =========================
+   Smooth Scene Transition
+========================= */
+
+
+.scene{
+
+    will-change:opacity, transform;
+
+}
+
+
+
+/* Reduce Motion Support */
+
+
+@media(prefers-reduced-motion:reduce){
+
+
+    *{
+
+        animation-duration:0.01ms!important;
+
+        animation-iteration-count:1!important;
+
+        transition-duration:0.01ms!important;
+
+    }
+
+
+} 
