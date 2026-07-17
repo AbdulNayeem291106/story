@@ -1276,24 +1276,15 @@ function stopMusic(){
 
 
 document.addEventListener(
-
-"click",
-
+"touchstart",
 ()=>{
 
-
-    startMusic();
-
+startMusic();
 
 },
-
 {
-
-    once:true
-
-}
-
-);
+once:true
+});
 
 
 
