@@ -10,7 +10,7 @@
 ========================= */
 
 
-const birthdayName = "NAME"; 
+const birthdayName = "Akram"; 
 // Change NAME to your cousin's name
 
 
@@ -276,7 +276,7 @@ const messages = [
 
         text:"Hey! 👋",
 
-        time:"09:00"
+        time:"06:00"
 
     },
 
@@ -287,7 +287,7 @@ const messages = [
 
         text:"Hi 😊",
 
-        time:"09:01"
+        time:"06:01"
 
     },
 
@@ -298,7 +298,7 @@ const messages = [
 
         text:"Do you know what day it is today?",
 
-        time:"09:01"
+        time:"06:01"
 
     },
 
@@ -309,7 +309,7 @@ const messages = [
 
         text:"No... Tell me 🤔",
 
-        time:"09:02"
+        time:"06:02"
 
     },
 
@@ -320,7 +320,7 @@ const messages = [
 
         text:"Today is our little champion's birthday! 🎂",
 
-        time:"09:02"
+        time:"06:02"
 
     },
 
@@ -331,7 +331,7 @@ const messages = [
 
         text:"Really? Let's surprise him! 🎉🎁",
 
-        time:"09:03"
+        time:"06:03"
 
     }
 
@@ -877,13 +877,13 @@ function setBirthdayName(name){
 
     const birthdayText =
     document.getElementById(
-        "birthday-name"
+        "birthday-Akram"
     );
 
 
     const wishText =
     document.getElementById(
-        "wish-name"
+        "wish-Akram"
     );
 
 
@@ -914,7 +914,7 @@ function setBirthdayName(name){
 
 */
 
-setBirthdayName(birthdayName);
+setBirthdayName(birthdayAkram);
 
 
 
