@@ -1218,3 +1218,81 @@ audio{
         opacity: 1;
     }
 }
+
+/* ==========================================
+   Wishes Screen Background
+========================================== */
+
+#wishes{
+
+    overflow:hidden;
+
+}
+
+#wishes .wallpaper{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    z-index:1;
+
+    animation:wallpaperZoom 15s linear infinite alternate;
+
+}
+
+#wishes::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(0,0,0,.30);
+
+    z-index:2;
+
+}
+
+.wish-box{
+
+    position:relative;
+
+    z-index:3;
+
+    background:rgba(0,0,0,.35);
+
+    backdrop-filter:blur(6px);
+
+    -webkit-backdrop-filter:blur(6px);
+
+    animation:
+
+        fadeIn 1s ease,
+
+        floating 4s ease-in-out infinite;
+
+}
+
+.wish-box h1{
+
+    animation:
+
+        glow 2s infinite;
+
+}
+
+.wish-box p{
+
+    animation:
+
+        fadeIn 2s ease;
+
+}
