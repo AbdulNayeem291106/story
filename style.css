@@ -435,7 +435,8 @@ audio{
 #lock-screen{
 
     background:#000;
-
+    cursor:pointer;
+    touch-action:manipulation;
 }
 
 /* Wallpaper */
