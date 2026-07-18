@@ -1205,12 +1205,13 @@ document.getElementById(
 function startMusic(){
 
     if(!music){
-        
-    music.volume = 1.0;
+        return;
+    }
 
-    music.play()
-    .catch((error)=>{
-        console.error(error);
+    music.volume = 1;
+
+    music.play().catch(error=>{
+        console.log(error);
     });
 
 }
@@ -1241,13 +1242,6 @@ function stopMusic(){
 /*
    Mobile browsers block
    autoplay audio.
-
-   First touch/click
-   enables music.
-*/
-
-
- document.addEventListener(
 
 
 
