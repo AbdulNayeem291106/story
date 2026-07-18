@@ -1293,3 +1293,32 @@ audio{
         fadeIn 2s ease;
 
 }
+
+.ending-caption{
+
+    position:absolute;
+
+    bottom:50px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:90%;
+
+    text-align:center;
+
+    color:#ffffff;
+
+    font-size:22px;
+
+    font-weight:bold;
+
+    text-shadow:
+        0 0 10px rgba(0,0,0,.8);
+
+    z-index:100;
+
+    animation:
+        fadeIn 1.5s ease;
+}
