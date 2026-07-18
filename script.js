@@ -98,67 +98,15 @@ function showScene(scene){
    Lock Screen Clock
 ========================= */
 
-
 function updateClock(){
 
+    const time = document.getElementById("time");
+    const date = document.getElementById("date");
 
-    const time =
-    document.getElementById("time");
-
-
-    const date =
-    document.getElementById("date");
-
-
-    const now =
-    new Date();
-
-
-
-    let hours =
-    now.getHours();
-
-
-    let minutes =
-    now.getMinutes();
-
-
-
-    let ampm =
-    hours >= 12 ? "PM" : "AM";
-
-
-
-    hours =
-    hours % 12;
-
-
-    hours =
-    hours || 12;
-
-
-
-    minutes =
-    minutes < 10
-    ? "0"+minutes
-    : minutes;
-
-
-
-    time.innerHTML =
-
-    `${hours}:${minutes} ${ampm}`;
-
-
-
-    date.innerHTML =
-
-    now.toDateString();
-
-
+    time.textContent = "06:00 AM";
+    date.textContent = "18 July";
 
 }
-
 
 
 setInterval(updateClock,1000);
