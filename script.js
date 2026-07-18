@@ -1205,30 +1205,23 @@ document.getElementById(
 
 function startMusic(){
 
+    if(!music){
+        alert("Audio element not found!");
+        return;
+    }
 
-    if(!music) return;
-
-
-
-    music.volume = 0.5;
-
-
+    music.volume = 1.0;
 
     music.play()
-
-    .catch(()=>{
-
-
-        console.log(
-            "Music waiting for user interaction"
-        );
-
-
+    .then(()=>{
+        alert("Music started successfully!");
+    })
+    .catch((error)=>{
+        alert("Music failed: " + error.message);
+        console.error(error);
     });
 
-
 }
-
 
 
 /* Stop Music */
