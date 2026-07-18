@@ -224,7 +224,7 @@ lockScreen.addEventListener(
 
 function unlockScreen(){
 
-
+    startMusic();
     lockScreen.classList.add(
         "unlocking"
     );
