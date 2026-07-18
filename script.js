@@ -105,7 +105,10 @@ function updateClock(){
 
     time.textContent = "06:00 AM";
     date.textContent = "18 July";
-
+   
+setInterval(updateClock,1000);
+updateClock();
+   
 }
 
 
