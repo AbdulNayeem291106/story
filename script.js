@@ -833,13 +833,17 @@ function showWishes(){
 
 
 function startEnding(){
+function startEnding(){
 
+    showScene(scenes.ending);
 
-    showScene(
-        scenes.ending
-    );
+    // If the song has already ended,
+    // start it again for the remaining slideshow.
+    if(music.paused){
 
+        startMusic();
 
+    }
 
     let finalImages=[
 
@@ -847,8 +851,6 @@ function startEnding(){
         images[10]
 
     ];
-
-
 
     playSlideshow(
 
@@ -858,16 +860,15 @@ function startEnding(){
 
         ()=>{
 
-
             createFireworks();
 
+            stopMusic();   // Stop after the final photo
 
         }
 
     );
 
-
-} 
+}
 /* =====================================================
    Part 3D
    Birthday Name + Confetti + Fireworks Generator
