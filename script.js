@@ -827,17 +827,8 @@ function showWishes(){
 
 
 function startEnding(){
-function startEnding(){
 
     showScene(scenes.ending);
-
-    // If the song has already ended,
-    // start it again for the remaining slideshow.
-    if(music.paused){
-
-        startMusic();
-
-    }
 
     let finalImages=[
 
@@ -856,7 +847,7 @@ function startEnding(){
 
             createFireworks();
 
-            stopMusic();   // Stop after the final photo
+            music.loop = false;
 
         }
 
