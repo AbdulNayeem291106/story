@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- =========================
+     Scene 1 : Lock Screen
+========================= -->
+
+<section id="lock-screen" class="scene active">
+
+    <img src="photo1.jpg"
+         class="wallpaper"
+         alt="Wallpaper">
+
+    <div class="lock-overlay">
+
+        <div class="time" id="time">
+            09:00
+        </div>
+
+        <div class="date" id="date">
+            Sunday, 10 August
+        </div>
+
+        <div class="swipe-text">
+            Swipe Up to Unlock
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     Scene 2 : WhatsApp Chat
+========================= -->
+
+<section id="chat-screen" class="scene">
+
+    <div class="phone">
+
+        <div class="chat-header">
+
+    <div class="header-left">
+
+        <div class="back-btn">
+            ←
+        </div>
+
+        <div class="contact-info">
+
+            <div class="chat-name">
+
+                Family Group
+
+            </div>
+
+            <div class="chat-status"
+                 id="chat-status">
+
+                online
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="header-right">
+
+        <div class="header-icon">
+            📹
+        </div>
+
+        <div class="header-icon">
+            📞
+        </div>
+
+        <div class="header-icon">
+            ⋮
+        </div>
+
+    </div>
+
+</div>
+
+<div class="chat-body"
+     id="chat-body">
+
+</div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     Scene 3 : First Slideshow
+========================= -->
+
+<section id="slideshow-one" class="scene">
+
+    <img id="slide1"
+         src="photo2.jpg"
+         class="slide-image">
+</section>
+
+<!-- =========================
+     Scene 4 : Birthday Title
+========================= -->
+
+<section id="birthday-title" class="scene">
+
+    <div class="confetti-container"></div>
+    <div class="confetti-fireworks"></div> 
+    
+    <h1>
+
+        🎉<br><br>
+
+        Happy Birthday
+
+        <br><br>
+
+        <span id="birthday-name">
+            Akram 
+        </span>
+
+        <br><br>
+
+        🎂
+
+    </h1>
+
+</section>
+
+<!-- =========================
+     Scene 5 : Second Slideshow
+========================= -->
+
+<section id="slideshow-two" class="scene">
+
+    <img id="slide2"
+         src=""
+         alt="Birthday Image">
+</section>
+
+<!-- =========================
+     Scene 6 : Wishes
+========================= -->
+
+<section id="wishes" class="scene">
+   <img id="wish-bg"
+         class="wallpaper"
+         src="photo10.jpg"
+         alt="Birthday Background">
+    <div class="wish-box">
+
+        <h2>
+            Happy Birthday
+        </h2>
+
+        <h1 id="wish-name">
+            Akram
+        </h1>
+
+        <p>
+
+            May God Bless You With
+
+            <br><br>
+
+            ❤️ Good Health
+
+            <br>
+
+            ⭐ Success
+
+            <br>
+
+            😊 Happiness
+
+            <br>
+
+            🎂 Long Life
+
+            <br><br>
+
+            Enjoy Your Special Day!
+
+            <br><br>
+
+            We All Love You ❤️
+
+        </p>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     Scene 7 : Final Slideshow
+========================= -->
+
+<section id="ending" class="scene">
+
+    <img id="slide3"
+         src=""
+         alt="Ending Image">
+
+    <div class="fireworks">
+
+    </div>
+
+</section>
+
+<!-- =========================
+     Audio
+========================= -->
+<audio id="bg-music" loop preload="auto">
+    <source src="birthday.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+
+<!-- =========================
+     JavaScript
+========================= -->
+
+<script src="script.js"></script>
+
+</body>
+</html>
