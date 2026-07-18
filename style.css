@@ -607,7 +607,7 @@ audio{
 
 #lock-screen .wallpaper{
 
-    animation:zoomIn 15s linear infinite alternate;
+    animation:none;
 
 }
 
@@ -870,9 +870,7 @@ audio{
 
     transform:scale(1);
 
-    animation:
-
-        wallpaperZoom 18s linear infinite alternate;
+    animation:none;
 
 }
 
@@ -1243,8 +1241,7 @@ audio{
 
     z-index:1;
 
-    animation:wallpaperZoom 15s linear infinite alternate;
-
+    animation:none;
 }
 
 #wishes::before{
