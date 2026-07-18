@@ -224,7 +224,6 @@ lockScreen.addEventListener(
 
 function unlockScreen(){
 
-    startMusic();
     lockScreen.classList.add(
         "unlocking"
     );
@@ -715,7 +714,7 @@ function showBirthdayTitle(){
         scenes.birthday
     );
 
-
+    startMusic();      // 🎵 Music starts here
     createConfetti();
 
 
@@ -726,7 +725,7 @@ function showBirthdayTitle(){
         startSecondSlideshow();
 
 
-    },5000);
+    },3000);
 
 
 
