@@ -749,27 +749,20 @@ audio{
     flex-direction: column;
     gap: 8px;
 }
-
-.message {
-    display: flex;
-    margin-bottom: 8px;
-    align-items: flex-end;
-    gap: 8px;
-    animation: slideIn 0.3s ease;
-}
-/* Common Bubble */
-
 .message{
+    display:flex;
+    margin-bottom:8px;
+    align-items:flex-end;
+    gap:8px;
 
     max-width:75%;
-
     padding:10px 14px;
 
     border-radius:12px;
 
     word-wrap:break-word;
 
-    animation:messageAppear .3s ease forwards;
+    animation:slideIn .3s ease;
 }
 
 /* Received (Left) */
