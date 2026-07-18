@@ -247,77 +247,41 @@ document.getElementById("chat-status");
    Chat Messages
 ========================= */
 
-
 const messages = [
 
+{
+    type:"received",
+    text:"Hey! 👋"
+},
 
-    {
+{
+    type:"sent",
+    text:"Hi 😊"
+},
 
-        type:"received",
+{
+    type:"received",
+    text:"Do you know what day it is today?"
+},
 
-        text:"Hey! 👋",
+{
+    type:"sent",
+    text:"No... Tell me 🤔"
+},
 
-        time:"09:00"
+{
+    type:"received",
+    text:"Today is our little champion's birthday! 🎂"
+},
 
-    },
-
-
-    {
-
-        type:"sent",
-
-        text:"Hi 😊",
-
-        time:"09:01"
-
-    },
-
-
-    {
-
-        type:"received",
-
-        text:"Do you know what day it is today?",
-
-        time:"09:01"
-
-    },
-
-
-    {
-
-        type:"sent",
-
-        text:"No... Tell me 🤔",
-
-        time:"09:02"
-
-    },
-
-
-    {
-
-        type:"received",
-
-        text:"Today is our little champion's birthday! 🎂",
-
-        time:"09:02"
-
-    },
-
-
-    {
-
-        type:"sent",
-
-        text:"Really? Let's surprise him! 🎉🎁",
-
-        time:"09:03"
-
-    }
-
+{
+    type:"sent",
+    text:"Really? Let's surprise him! 🎉🎁"
+}
 
 ];
+
+
 
 
 
@@ -405,6 +369,21 @@ function showNextMessage(index){
 /* =========================
    Add Message - FIXED
 ========================= */
+function getCurrentChatTime(){
+
+    const now = new Date();
+
+    let hours = now.getHours();
+    let minutes = now.getMinutes();
+
+    const ampm = hours >= 12 ? "PM" : "AM";
+
+    hours = hours % 12 || 12;
+
+    minutes = minutes < 10 ? "0" + minutes : minutes;
+
+    return `${hours}:${minutes} ${ampm}`;
+}
 
 
 function addMessage(message){
@@ -424,7 +403,7 @@ function addMessage(message){
 
     const timeSpan = document.createElement("span");
     timeSpan.className = "msg-time";
-    timeSpan.textContent = message.time;
+    timeSpan.textContent = getCurrentChatTime();
 
     if(message.type === "sent") {
         const statusSpan = document.createElement("span");
