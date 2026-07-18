@@ -221,31 +221,13 @@ lockScreen.addEventListener(
 
 });
 
-
 function unlockScreen(){
 
-    lockScreen.classList.add(
-        "unlocking"
-    );
+    showScene(scenes.chat);
 
-
-    setTimeout(()=>{
-
-
-        showScene(
-            scenes.chat
-        );
-
-
-        startChat();
-
-
-    },800);
-
+    startChat();
 
 }
-
-
 
 /* =========================
    Chat Elements
