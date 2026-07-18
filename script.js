@@ -1247,7 +1247,7 @@ function stopMusic(){
 */
 
 
-
+ document.addEventListener(
 
 
 
