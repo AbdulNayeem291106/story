@@ -798,26 +798,30 @@ function startEnding(){
 
     ];
 
-
-
     playSlideshow(
 
-        slide3,
+    slide3,
 
-        finalImages,
+    finalImages,
 
-        ()=>{
+    ()=>{
 
+        createFireworks();
 
-            createFireworks();
+        setTimeout(() => {
 
+            document.body.style.background = "#000";
+            showScene({ classList: { add(){}, remove(){} } });
 
-        }
+            document.querySelectorAll(".scene").forEach(scene => {
+                scene.style.display = "none";
+            });
 
-    );
+        }, 3000);   // Wait 3 seconds after fireworks
 
+    }
 
-} 
+);
 /* =====================================================
    Part 3D
    Birthday Name + Confetti + Fireworks Generator
