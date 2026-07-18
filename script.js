@@ -281,10 +281,6 @@ const messages = [
 
 ];
 
-
-
-
-
 /* =========================
    Start Chat
 ========================= */
@@ -299,9 +295,7 @@ function startChat(){
     showNextMessage(0);
 
 
-}
-
-
+} 
 
 /* =========================
    Message Controller
@@ -326,9 +320,7 @@ function showNextMessage(index){
         return;
 
 
-    }
-
-
+    } 
 
     showTyping();
 
