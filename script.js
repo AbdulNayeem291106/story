@@ -786,25 +786,44 @@ function startSecondSlideshow(){
 
 function showWishes(){
 
+    showScene(scenes.wishes);
 
-    showScene(
-        scenes.wishes
-    );
+    const bg =
+    document.getElementById("wish-bg");
 
+    const backgrounds = [
 
+        images[9],   // photo10
+
+        images[10]   // photo11
+
+    ];
+
+    let index = 0;
+
+    bg.src = backgrounds[index];
+
+    const bgInterval = setInterval(()=>{
+
+        index++;
+
+        if(index < backgrounds.length){
+
+            bg.src = backgrounds[index];
+
+        }
+
+    },3500);
 
     setTimeout(()=>{
 
+        clearInterval(bgInterval);
 
         startEnding();
 
-
     },7000);
 
-
-
 }
-
 
 
 /* =========================
