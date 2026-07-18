@@ -791,7 +791,7 @@ function showWishes(){
     const bg =
     document.getElementById("wish-bg");
 
-    const backgrounds=[
+    const backgrounds = [
 
         images[9],   // photo10
 
@@ -799,27 +799,33 @@ function showWishes(){
 
     ];
 
-    let index=0;
+    let index = 0;
 
-    bg.src=backgrounds[index];
+    bg.src = backgrounds[index];
 
-    const interval=setInterval(()=>{
+    const bgInterval = setInterval(()=>{
 
-        index=(index+1)%backgrounds.length;
+        index++;
 
-        bg.src=backgrounds[index];
+        if(index < backgrounds.length){
 
-    },2500);
+            bg.src = backgrounds[index];
+
+        }
+
+    },3500);
 
     setTimeout(()=>{
 
-        clearInterval(interval);
+        clearInterval(bgInterval);
 
         startEnding();
 
     },7000);
 
 }
+
+
 /* =========================
    Final Slideshow
    Photos 10-11
@@ -828,7 +834,12 @@ function showWishes(){
 
 function startEnding(){
 
-    showScene(scenes.ending);
+
+    showScene(
+        scenes.ending
+    );
+
+
 
     let finalImages=[
 
@@ -836,6 +847,8 @@ function startEnding(){
         images[10]
 
     ];
+
+
 
     playSlideshow(
 
@@ -845,15 +858,16 @@ function startEnding(){
 
         ()=>{
 
+
             createFireworks();
 
-            music.loop = false;
 
         }
 
     );
 
-}
+
+} 
 /* =====================================================
    Part 3D
    Birthday Name + Confetti + Fireworks Generator
@@ -1209,7 +1223,9 @@ document.getElementById(
 
 function startMusic(){
 
-    if(!music) return;
+    if(!music){
+        return;
+    }
 
     music.volume = 1;
 
