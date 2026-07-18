@@ -1205,18 +1205,11 @@ document.getElementById(
 function startMusic(){
 
     if(!music){
-        alert("Audio element not found!");
-        return;
-    }
-
+        
     music.volume = 1.0;
 
     music.play()
-    .then(()=>{
-        alert("Music started successfully!");
-    })
     .catch((error)=>{
-        alert("Music failed: " + error.message);
         console.error(error);
     });
 
@@ -1255,16 +1248,6 @@ function stopMusic(){
 
 
 document.addEventListener(
-"touchstart",
-()=>{
-
-startMusic();
-
-},
-{
-once:true
-});
-
 
 
 
