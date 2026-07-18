@@ -1223,11 +1223,11 @@ document.getElementById(
 
 function startMusic(){
 
-    if(!music){
-        return;
-    }
+    if(!music) return;
 
     music.volume = 1;
+
+    music.currentTime = 0;
 
     music.play().catch(error=>{
         console.log(error);
