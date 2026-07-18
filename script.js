@@ -521,11 +521,8 @@ document.getElementById("slide3");
    Slideshow Settings
 ========================= */
 
-
-const slideDuration = 4000;
+const slideDuration = 2000;
 // 4 seconds per image
-
-
 
 /* =========================
    First Slideshow
