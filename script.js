@@ -791,7 +791,7 @@ function showWishes(){
     const bg =
     document.getElementById("wish-bg");
 
-    const backgrounds = [
+    const backgrounds=[
 
         images[9],   // photo10
 
@@ -799,33 +799,27 @@ function showWishes(){
 
     ];
 
-    let index = 0;
+    let index=0;
 
-    bg.src = backgrounds[index];
+    bg.src=backgrounds[index];
 
-    const bgInterval = setInterval(()=>{
+    const interval=setInterval(()=>{
 
-        index++;
+        index=(index+1)%backgrounds.length;
 
-        if(index < backgrounds.length){
+        bg.src=backgrounds[index];
 
-            bg.src = backgrounds[index];
-
-        }
-
-    },3500);
+    },2500);
 
     setTimeout(()=>{
 
-        clearInterval(bgInterval);
+        clearInterval(interval);
 
         startEnding();
 
     },7000);
 
 }
-
-
 /* =========================
    Final Slideshow
    Photos 10-11
