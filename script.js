@@ -747,9 +747,9 @@ function showWishes(){
     
     const backgrounds = [    
     
-        images[9],       
+        images[8],       
     
-        images[10]       
+        images[9]       
     
     ];    
     
@@ -778,50 +778,7 @@ function showWishes(){
     },7000);    
     
 }    
-    
-    
-/* =========================    
-   Final Slideshow    
-   Photos 10-11    
-========================= */    
-    
-    
-function startEnding(){    
-    
-    
-    showScene(    
-        scenes.ending    
-    );    
-    
-    
-    
-    let finalImages=[    
-    
-        images[9],    
-        images[10]    
-    
-    ];    
-    
-    
-    
-    playSlideshow(    
-    
-        slide3,    
-    
-        finalImages,    
-    
-        ()=>{    
-    
-    
-            createFireworks();    
-    
-    
-        }    
-    
-    );    
-    
-    
-}     
+   
 /* =====================================================    
    Part 3D    
    Birthday Name + Confetti + Fireworks Generator    
