@@ -389,8 +389,9 @@ function addMessage(message){
     `message ${message.type}`;    
     
     const msgContent = document.createElement("div");    
-    msgContent.style.display = "flex";    
-    msgContent.style.flexDirection = "column";    
+    msgContent.style.display = "flex";
+    msgContent.style.flexDirection = "column";
+    msgContent.style.width = "100%";    
     
     const textSpan = document.createElement("span");    
     textSpan.textContent = message.text;    
