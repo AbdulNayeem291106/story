@@ -755,25 +755,37 @@ function showWishes(){
     
     bg.src = backgrounds[index];    
     
-    const bgInterval = setInterval(()=>{    
+const bgInterval = setInterval(()=>{
+
+    index++;
+
+    if(index < backgrounds.length){
+
+        bg.src = backgrounds[index];
+
+    }else{
+
+        clearInterval(bgInterval);
+
+    }
+
+},3500);
     
-        index++;    
-    
-        if(index < backgrounds.length){    
-    
-            bg.src = backgrounds[index];    
-    
-        }    
-    
-    },3500);    
-    
-    setTimeout(()=>{    
-    
-        clearInterval(bgInterval);    
-    
-        createFireworks();
-    
-    },7000);    
+    setTimeout(()=>{
+
+    clearInterval(bgInterval);
+
+    createFireworks();
+
+    setTimeout(()=>{
+
+        stopMusic();
+
+        restartBirthday();
+
+    },5000);
+
+},7000);
     
 }    
    
