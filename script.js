@@ -64,9 +64,7 @@ const scenes = {
     
     wishes:    
     document.getElementById("wishes"),    
-    
-    ending:    
-    document.getElementById("ending")    
+        
     
 };    
     
