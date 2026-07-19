@@ -515,10 +515,6 @@ const slide2 =
 document.getElementById("slide2");    
     
     
-const slide3 =    
-document.getElementById("slide3");    
-    
-    
     
 /* =========================    
    Slideshow Settings    
@@ -674,7 +670,7 @@ function showBirthdayTitle(){
     );    
     
     createConfetti();
-    
+    createFireeorks();
     
     setTimeout(()=>{    
     
@@ -744,8 +740,8 @@ function showWishes(){
 
     showScene(scenes.wishes);
 
-    <div class="confetti-container"></div>  
-    <div class="fireworks"></div>  
+    createConfetti();
+    createFireworks();  
 
     const bg = document.getElementById("wish-bg");
 
@@ -842,18 +838,11 @@ setBirthdayName(birthdayName);
 /* =========================    
    Confetti Generator    
 ========================= */    
-    
-    
-function createConfetti(){    
-    
-    const container =
-document.querySelector(".confetti-container");
 
-}
+function createConfetti(){
 
-containers.forEach(container => {
-
-    container.innerHTML = "";
+    const containers =
+        document.querySelectorAll(".confetti-container");
 
     const colors = [
         "#ff4d6d",
@@ -864,130 +853,39 @@ containers.forEach(container => {
         "#ffffff"
     ];
 
-    for(let i = 0; i < 80; i++){
+    containers.forEach(container=>{
 
-        const piece = document.createElement("div");
+        container.innerHTML="";
 
-        piece.className = "confetti";
+        for(let i=0;i<80;i++){
 
-        piece.style.left = Math.random() * 100 + "%";
+            const piece=document.createElement("div");
 
-        piece.style.animationDuration =
-            (3 + Math.random() * 4) + "s";
+            piece.className="confetti";
 
-        piece.style.animationDelay =
-            Math.random() * 3 + "s";
+            piece.style.left=Math.random()*100+"%";
 
-        piece.style.background =
-            colors[Math.floor(Math.random() * colors.length)];
+            piece.style.background=
+                colors[Math.floor(Math.random()*colors.length)];
 
-        piece.style.transform =
-            `rotate(${Math.random()*360}deg)`;
+            piece.style.animationDuration=
+                (3+Math.random()*4)+"s";
 
-        container.appendChild(piece);
-    }
+            piece.style.animationDelay=
+                Math.random()*3+"s";
 
-});
-    
-    
-    if(!container) return;    
-    
-    
-    
-    container.innerHTML="";    
-    
-    
-    
-    const colors=[    
-    
-        "#ff4d6d",    
-    
-        "#ffd166",    
-    
-        "#06d6a0",    
-    
-        "#118ab2",    
-    
-        "#8338ec",    
-    
-        "#ffffff"    
-    
-    ];    
-    
-    
-    
-    for(let i=0;i<80;i++){    
-    
-    
-        const piece =    
-        document.createElement(    
-            "div"    
-        );    
-    
-    
-        piece.className =    
-        "confetti";    
-    
-    
-    
-        piece.style.left =    
-        Math.random()*100+"%";    
-    
-    
-    
-        piece.style.animationDuration =    
-    
-        (3 + Math.random()*4)    
-    
-        +"s";    
-    
-    
-    
-        piece.style.animationDelay =    
-    
-        Math.random()*3    
-    
-        +"s";    
-    
-    
-    
-        piece.style.background =    
-    
-        colors[    
-    
-            Math.floor(    
-    
-                Math.random()    
-    
-                *    
-    
-                colors.length    
-    
-            )    
-    
-        ];    
-    
-    
-    
-        piece.style.transform =    
-    
-        `rotate(${Math.random()*360}deg)`;    
-    
-    
-    
-        container.appendChild(    
-            piece    
-        );    
-    
-    
-    }    
-    
-    
-}    
-    
-    
-    
-    
+            piece.style.transform=
+                `rotate(${Math.random()*360}deg)`;
+
+            container.appendChild(piece);
+        }
+
+    });
+
+}
+
+
+
 /* =========================    
    Fireworks Generator    
 ========================= */    
