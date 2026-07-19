@@ -736,59 +736,46 @@ function startSecondSlideshow(){
 ========================= */    
     
     
-function showWishes(){    
-    
-    showScene(scenes.wishes);    
-    
-    const bg =    
-    document.getElementById("wish-bg");    
-    
-    const backgrounds = [    
-    
-        images[8],       
-    
-        images[9]       
-    
-    ];    
-    
-    let index = 0;    
-    
-    bg.src = backgrounds[index];    
-    
-const bgInterval = setInterval(()=>{
+function showWishes(){
 
-    index++;
+    showScene(scenes.wishes);
 
-    if(index < backgrounds.length){
+    createFireworks();   // Start fireworks
 
-        bg.src = backgrounds[index];
+    const bg = document.getElementById("wish-bg");
 
-    }else{
+    const backgrounds = [
+        images[8],   // photo9
+        images[9]    // photo10
+    ];
+
+    let index = 0;
+
+    bg.src = backgrounds[index];
+
+    const bgInterval = setInterval(() => {
+
+        index++;
+
+        if(index < backgrounds.length){
+            bg.src = backgrounds[index];
+        }
+
+    },3500);
+
+    // End after 7 seconds
+    setTimeout(() => {
 
         clearInterval(bgInterval);
 
-    }
-
-},3500);
-    
-    setTimeout(()=>{
-
-    clearInterval(bgInterval);
-
-    createFireworks();
-
-    setTimeout(()=>{
-
         stopMusic();
 
-        restartBirthday();
+        // Hide the wishes screen
+        showScene(scenes.lock);
 
-    },5000);
+    },7000);
 
-},7000);
-    
-}    
-   
+}
 /* =====================================================    
    Part 3D    
    Birthday Name + Confetti + Fireworks Generator    
