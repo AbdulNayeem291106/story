@@ -30,11 +30,11 @@ const images = [
     
     "photo7.jpg",    
     
+    "photo8.jpg",    
+    
     "photo9.jpg",    
     
-    "photo10.jpg",    
-    
-    "photo11.jpg"    
+    "photo10.jpg"    
     
 ];    
     
@@ -536,24 +536,23 @@ const slideDuration = 4000;
    Photos 2-6    
 ========================= */    
     
-    
-function startFirstSlideshow(){    
-    
-    
-    showScene(    
-        scenes.slide1    
-    );    
-    
-    
-    let firstImages = [    
-    
-        images[1],    
-        images[2],    
-        images[3],    
-        images[4],    
-        images[5]    
-    
-    ];    
+function startFirstSlideshow(){
+
+    showScene(
+        scenes.slide1
+    );
+
+    startMusic();
+
+    let firstImages = [
+
+        images[1],
+        images[2],
+        images[3],
+        images[4],
+        images[5]
+
+    ];
     
     
     playSlideshow(    
@@ -671,7 +670,6 @@ function showBirthdayTitle(){
         scenes.birthday    
     );    
     
-    startMusic();      // 🎵 Music starts here    
     createConfetti();    
     
     
@@ -749,9 +747,9 @@ function showWishes(){
     
     const backgrounds = [    
     
-        images[9],   // photo10    
+        images[9],       
     
-        images[10]   // photo11    
+        images[10]       
     
     ];    
     
@@ -775,7 +773,7 @@ function showWishes(){
     
         clearInterval(bgInterval);    
     
-        startEnding();    
+        createFireworks();
     
     },7000);    
     
