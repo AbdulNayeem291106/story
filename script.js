@@ -30,8 +30,6 @@ const images = [
     
     "photo7.jpg",    
     
-    "photo8.jpg",    
-    
     "photo9.jpg",    
     
     "photo10.jpg",    
@@ -705,7 +703,6 @@ function startSecondSlideshow(){
     
         images[6],    
         images[7],    
-        images[8]    
     
     ];    
     
