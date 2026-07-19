@@ -643,7 +643,7 @@ function playSlideshow(
     
             nextImage,    
     
-            Duration    
+            duration    
     
         );    
     
