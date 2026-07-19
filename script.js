@@ -524,7 +524,9 @@ document.getElementById("slide3");
 ========================= */    
     
     
-const slideDuration = 4000;    
+const firstSlideDuration = 5600;    
+const secondSlideDuration = 8333;
+
 // 4 seconds per image    
     
     
@@ -553,21 +555,21 @@ function startFirstSlideshow(){
     ];
     
     
-    playSlideshow(    
-    
-        slide1,    
-    
-        firstImages,    
-    
-        ()=>{    
-    
-    
-            showBirthdayTitle();    
-    
-    
-        }    
-    
-    );    
+    playSlideshow(
+
+    slide1,
+
+    firstImages,
+
+    firstSlideDuration,
+
+    ()=>{
+
+        showBirthdayTitle();
+
+    }
+
+);
     
     
 }    
@@ -579,15 +581,17 @@ function startFirstSlideshow(){
 ========================= */    
     
     
-function playSlideshow(    
-    
-    element,    
-    
-    imageList,    
-    
-    finished    
-    
-){    
+function playSlideshow(
+
+    element,
+
+    imageList,
+
+    duration,
+
+    finished
+
+){
     
     
     let index=0;    
@@ -639,7 +643,7 @@ function playSlideshow(
     
             nextImage,    
     
-            slideDuration    
+            Duration    
     
         );    
     
@@ -678,7 +682,7 @@ function showBirthdayTitle(){
         startSecondSlideshow();    
     
     
-    },3000);    
+    },4000);    
     
     
     
@@ -710,21 +714,21 @@ function startSecondSlideshow(){
     
     
     
-    playSlideshow(    
-    
-        slide2,    
-    
-        secondImages,    
-    
-        ()=>{    
-    
-    
-            showWishes();    
-    
-    
-        }    
-    
-    );    
+    playSlideshow(
+
+    slide2,
+
+    secondImages,
+
+    secondSlideDuration,
+
+    ()=>{
+
+        showWishes();
+
+    }
+
+);
     
     
 }    
