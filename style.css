@@ -802,9 +802,13 @@ audio{
 
 .msg-time{
 
-    display:block;
+    display:flex;
 
-    text-align:right;
+    justify-content:flex-end;
+
+    align-items:center;
+
+    width:100%;
 
     font-size:11px;
 
@@ -822,10 +826,11 @@ audio{
 
     color:#53bdeb;
 
-    margin-left:3px;
+    margin-left:4px;
+
+    display:inline-block;
 
 }
-
 
 
 /* =====================================================
