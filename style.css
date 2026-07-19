@@ -789,8 +789,26 @@ audio{
 
     color:#fff;
 
+} 
+
+.msg-time{
+
+    font-size:10px;
+
+    opacity:.75;
+
+    margin-top:4px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:flex-start;
+
 }
- 
+
+
+
 /* =====================================================
    Part 2A-3
    Lock Screen Animations
