@@ -1,3 +1,5 @@
+alert("JavaScript Loaded");
+
 /* =====================================================    
    Birthday Story    
    Part 3A    
