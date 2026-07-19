@@ -791,19 +791,38 @@ audio{
 
 } 
 
+/* Message content */
+.message > div{
+
+    width:100%;
+
+}
+
+/* Message time */
+
 .msg-time{
 
-    font-size:10px;
+    display:block;
 
-    opacity:.75;
+    text-align:right;
+
+    font-size:11px;
+
+    color:rgba(255,255,255,.70);
 
     margin-top:4px;
 
-    display:flex;
+}
 
-    align-items:center;
+/* Double ticks */
 
-    justify-content:flex-start;
+.msg-status{
+
+    font-size:10px;
+
+    color:#53bdeb;
+
+    margin-left:3px;
 
 }
 
