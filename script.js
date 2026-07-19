@@ -259,7 +259,7 @@ const messages = [
     
 {    
     type:"received",    
-    text:"Do you know what day it is today?"    
+    text:"Do you know what day it is today? 🗓"    
 },    
     
 {    
@@ -269,16 +269,22 @@ const messages = [
     
 {    
     type:"received",    
-    text:"Today is our little champion's birthday! 🎂"    
+    text:"Today is our champion's birthday! 🎂"    
 },    
     
 {    
-    type:"sent",    
-    text:"Really? Let's surprise him! 🎉🎁"    
-}    
-    
+    type:"sent",   
+    text:"oh! yeah! I forget that 🧠"
+          
+},   
+
+{    
+    type:"sent",
+    text:"Let's surprise him! 🎉🎁🎊"
+}
+
 ];    
-    
+     
 /* =========================    
    Start Chat    
 ========================= */    
