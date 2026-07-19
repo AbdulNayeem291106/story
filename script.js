@@ -848,8 +848,44 @@ setBirthdayName(birthdayName);
 function createConfetti(){    
     
     
-  const containers =
-document.querySelectorAll(".confetti-container");
+  function createConfetti(container){
+
+    if(!container) return;
+
+    container.innerHTML = "";
+
+    const colors = [
+        "#ff4d6d",
+        "#ffd166",
+        "#06d6a0",
+        "#118ab2",
+        "#8338ec",
+        "#ffffff"
+    ];
+
+    for(let i=0;i<80;i++){
+
+        const piece = document.createElement("div");
+
+        piece.className = "confetti";
+
+        piece.style.left = Math.random()*100 + "%";
+
+        piece.style.animationDuration =
+            (3 + Math.random()*4) + "s";
+
+        piece.style.animationDelay =
+            Math.random()*3 + "s";
+
+        piece.style.background =
+            colors[Math.floor(Math.random()*colors.length)];
+
+        piece.style.transform =
+            `rotate(${Math.random()*360}deg)`;
+
+        container.appendChild(piece);
+    }
+}
 
 containers.forEach(container => {
 
