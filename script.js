@@ -521,8 +521,8 @@ document.getElementById("slide2");
 ========================= */    
     
     
-const firstSlideDuration = 6000;    
-const secondSlideDuration = 9000;
+const firstSlideDuration = 6500;    
+const secondSlideDuration = 9500;
 
 // 4 seconds per image    
     
@@ -678,7 +678,7 @@ function showBirthdayTitle(){
         startSecondSlideshow();    
     
     
-    },5000);    
+    },5500);    
     
     
     
@@ -774,7 +774,7 @@ function showWishes(){
         // Hide the wishes screen
         showScene(scenes.lock);
 
-    },8000);
+    },8500);
 
 }
 /* =====================================================    
