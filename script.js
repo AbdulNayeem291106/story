@@ -670,7 +670,7 @@ function showBirthdayTitle(){
     );    
     
     createConfetti();
-    createFireeorks();
+    createFireworks();
     
     setTimeout(()=>{    
     
@@ -1100,21 +1100,18 @@ function stopMusic(){
 }    
     
     
-    
-/* =========================    
-   Mobile Audio Unlock    
-========================= */    
-    
-    
-/*    
-   Mobile browsers block    
-   autoplay audio.    
-    
-    
-    
-/* =========================    
-   Performance Optimization    
-========================= */    
+/****************************
+ Mobile Audio Unlock
+****************************/
+
+/*
+Mobile browsers block autoplay audio.
+User interaction is required before playing music.
+*/
+
+/****************************
+ Performance Optimization
+****************************/
     
     
 /* Reduce unnecessary animations    
