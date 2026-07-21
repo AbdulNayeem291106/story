@@ -888,7 +888,7 @@ function createConfetti(){
 function createFireworks(){
 
     const containers =
-        document.querySelectorAll(".fireworks");
+        document.querySelectorAll(".scene.active .fireworks");
 
     containers.forEach(container=>{
 
