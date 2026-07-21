@@ -888,61 +888,38 @@ function createConfetti(){
 
 /* =========================    
    Fireworks Generator    
-========================= */    
+========================= */   
+    
+function createFireworks(){
+
+    const containers =
+        document.querySelectorAll(".fireworks");
+
+    containers.forEach(container=>{
+
+        container.innerHTML="";
+
+        for(let burst=0;burst<8;burst++){
+
+            setTimeout(()=>{
+
+                createFireworkBurst(container);
+
+            }, burst*700);
+
+        }
+
+    });
+
+} 
     
     
-function createFireworks(){    
-    
-    
-    const container =    
-    document.querySelector(    
-        ".fireworks"    
-    );    
-    
-    
-    if(!container) return;    
-    
-    
-    
-    container.innerHTML="";    
-    
-    
-    
-    for(let burst=0;burst<8;burst++){    
-    
-    
-    
-        setTimeout(()=>{    
-    
-    
-            createFireworkBurst(    
-                container    
-            );    
-    
-    
-        },    
-    
-        burst*700);    
-    
-    
-    
-    }    
-    
-    
-}    
-    
-    
-    
-    
-function createFireworkBurst(container){    
-    
-    
+function createFireworkBurst(container){        
     
     const centerX =    
     
     Math.random()*80+10;    
-    
-    
+     
     
     const centerY =    
     
