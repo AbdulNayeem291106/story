@@ -841,8 +841,12 @@ setBirthdayName(birthdayName);
 
 function createConfetti(){
 
-    const containers =
-        document.querySelectorAll(".confetti-container");
+    const container =
+        document.querySelector(".scene.active .confetti-container");
+
+    if(!container) return;
+
+    container.innerHTML = "";
 
     const colors = [
         "#ff4d6d",
@@ -853,39 +857,30 @@ function createConfetti(){
         "#ffffff"
     ];
 
-    containers.forEach(container=>{
+    for(let i=0;i<80;i++){
 
-        container.innerHTML="";
+        const piece = document.createElement("div");
 
-        for(let i=0;i<80;i++){
+        piece.className = "confetti";
 
-            const piece=document.createElement("div");
+        piece.style.left = Math.random()*100 + "%";
 
-            piece.className="confetti";
+        piece.style.background =
+            colors[Math.floor(Math.random()*colors.length)];
 
-            piece.style.left=Math.random()*100+"%";
+        piece.style.animationDuration =
+            (3 + Math.random()*4) + "s";
 
-            piece.style.background=
-                colors[Math.floor(Math.random()*colors.length)];
+        piece.style.animationDelay =
+            Math.random()*3 + "s";
 
-            piece.style.animationDuration=
-                (3+Math.random()*4)+"s";
+        piece.style.transform =
+            `rotate(${Math.random()*360}deg)`;
 
-            piece.style.animationDelay=
-                Math.random()*3+"s";
-
-            piece.style.transform=
-                `rotate(${Math.random()*360}deg)`;
-
-            container.appendChild(piece);
-        }
-
-    });
+        container.appendChild(piece);
+    }
 
 }
-
-
-
 /* =========================    
    Fireworks Generator    
 ========================= */   
