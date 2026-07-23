@@ -874,6 +874,82 @@ audio{
 
 } 
 
+/* ===========================
+   WhatsApp Footer
+=========================== */
+
+.chat-footer{
+
+    display:flex;
+
+    align-items:center;
+
+    padding:8px;
+
+    background:#f0f2f5;
+
+}
+
+.footer-box{
+
+    flex:1;
+
+    height:48px;
+
+    background:#ffffff;
+
+    border-radius:28px;
+
+    display:flex;
+
+    align-items:center;
+
+    padding:0 14px;
+
+    gap:14px;
+
+}
+
+.message-placeholder{
+
+    flex:1;
+
+    color:#777;
+
+    font-size:17px;
+
+}
+
+.footer-icon{
+
+    font-size:22px;
+
+}
+
+.mic-button{
+
+    width:52px;
+
+    height:52px;
+
+    margin-left:10px;
+
+    border-radius:50%;
+
+    background:#25D366;
+
+    color:#fff;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:26px;
+
+} 
+
 /* =====================================================
    Part 2A-3
    Lock Screen Animations
