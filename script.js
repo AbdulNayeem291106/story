@@ -243,46 +243,75 @@ document.getElementById("chat-status");
    Chat Messages    
 ========================= */    
     
-const messages = [    
-    
-{    
-    type:"received",    
-    text:"Hey! 👋"    
-},    
-    
-{    
-    type:"sent",    
-    text:"Hi 😊"    
-},    
-    
-{    
-    type:"received",    
-    text:"Do you know what day it is today? 🗓"    
-},    
-    
-{    
-    type:"sent",    
-    text:"No... Tell me 🤔"    
-},    
-    
-{    
-    type:"received",    
-    text:"Today is our champion's birthday! 🎂"    
-},    
-    
-{    
-    type:"sent",   
-    text:"oh! yeah! I forget that 🧠"
-          
-},   
+const messages = [
 
-{    
-    type:"sent",
-    text:"Let's surprise him! 🎉🎁🎊"
-}
+{type:"received", text:"Hey! 👋"},
+   
+{type:"sent", text:"Hi 😊"},
+   
+{type:"received", text:"Do you know what day it is today? 🗓"},
+   
+{type:"sent", text:"No... Tell me 🤔"},
+   
+{type:"received", text:"Today is our champion's birthday! 🎂"},
+   
+{type:"sent", text:"Oh! Yeah! I forgot that 🧠"},
+   
+{type:"sent", text:"Let's surprise him! 🎉🎁🎊"},
 
-];    
-     
+{type:"received", text:"Can you believe Akram is growing so fast? 😊"},
+   
+{type:"sent", text:"Time flies ❤️"},
+   
+{type:"received", text:"I still remember his first birthday."},
+   
+{type:"sent", text:"He looked so cute 😍"},
+   
+{type:"received", text:"And he cried after seeing the cake 😂"},
+   
+{type:"sent", text:"Haha... yes 🤣"},
+   
+{type:"received", text:"Now he's everyone's little champion 💪"},
+   
+{type:"sent", text:"Always smiling 😊"},
+   
+{type:"received", text:"Always making us laugh 😂"},
+   
+{type:"sent", text:"True ❤️"},
+   
+{type:"received", text:"May God bless him always 🙏"},
+   
+{type:"sent", text:"Ameen 🤲"},
+   
+{type:"received", text:"Good health ❤️"},
+   
+{type:"sent", text:"Success 🌟"},
+   
+{type:"received", text:"Long life 🎂"},
+   
+{type:"sent", text:"Happiness 😊"},
+   
+{type:"received", text:"Lots of friends 🤝"},
+   
+{type:"sent", text:"Bright future ✨"},
+   
+{type:"received", text:"Stay humble ❤️"},
+   
+{type:"sent", text:"Stay kind 😊"},
+   
+{type:"received", text:"Keep smiling 😄"},
+   
+{type:"sent", text:"Keep shining ⭐"},
+   
+{type:"received", text:"Enjoy every moment 🎈"},
+   
+{type:"sent", text:"Have an amazing birthday 🎉"},
+   
+{type:"received", text:"We all love you, Akram ❤️🎂"}
+
+];
+
+
 /* =========================    
    Start Chat    
 ========================= */    
@@ -302,64 +331,53 @@ function startChat(){
 /* =========================    
    Message Controller    
 ========================= */    
+
     
-    
-function showNextMessage(index){    
-    
-    
-    if(index >= messages.length){    
-    
-    
-        setTimeout(()=>{    
-    
-    
-            startFirstSlideshow();    
-    
-    
-        },1500);    
-    
-    
-        return;    
-    
-    
-    }     
-    
-    showTyping();    
-    
-    
-    
-    setTimeout(()=>{    
-    
-    
-        hideTyping();    
-    
-    
-    
-        addMessage(    
-            messages[index]    
-        );    
-    
-    
-        setTimeout(()=>{    
-    
-    
-            showNextMessage(    
-                index+1    
-            );    
-    
-    
-        },1200);    
-    
-    
-    
-    },1500);    
-    
-    
-    
-}    
-    
-    
-    
+function showNextMessage(index){
+
+    if(index >= messages.length){
+
+        setTimeout(()=>{
+
+            startFirstSlideshow();
+
+        },1500);
+
+        return;
+
+    }
+
+    // Faster for first 2 messages
+    let typingDelay = 1500;
+    let nextMessageDelay = 1200;
+
+    // Slower from 3rd message onwards
+    if(index >= 2){
+
+        typingDelay = 2800;      // Typing lasts longer
+        nextMessageDelay = 1800; // Wait longer before next message
+
+    }
+
+    showTyping();
+
+    setTimeout(()=>{
+
+        hideTyping();
+
+        addMessage(messages[index]);
+
+        setTimeout(()=>{
+
+            showNextMessage(index + 1);
+
+        }, nextMessageDelay);
+
+    }, typingDelay);
+
+} 
+
+
 /* =========================    
    Add Message - FIXED    
 ========================= */    
@@ -400,12 +418,34 @@ function addMessage(message){
     timeSpan.className = "msg-time";    
     timeSpan.textContent = getCurrentChatTime();    
     
-    if(message.type === "sent") {    
-        const statusSpan = document.createElement("span");    
-        statusSpan.className = "msg-status";    
-        statusSpan.textContent = " ✓✓";    
-        timeSpan.appendChild(statusSpan);    
-    }    
+    if(message.type === "sent") {
+
+    const statusSpan = document.createElement("span");
+
+    statusSpan.className = "msg-status";
+
+    // First stage
+    statusSpan.textContent = " ✓";
+
+    timeSpan.appendChild(statusSpan);
+
+    // After 0.8 sec → Double Tick
+    setTimeout(() => {
+
+        statusSpan.textContent = " ✓✓";
+
+    },800);
+
+    // After another second → Blue Double Tick
+    setTimeout(() => {
+
+        statusSpan.textContent = " ✓✓";
+
+        statusSpan.classList.add("read");
+
+    },1800);
+
+}
     
     msgContent.appendChild(textSpan);    
     msgContent.appendChild(timeSpan);    
@@ -1195,4 +1235,4 @@ console.log(
     
 "🎂 Birthday Story Loaded Successfully!"    
     
-);  
+);
