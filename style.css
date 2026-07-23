@@ -883,12 +883,9 @@ audio{
 =========================== */
 
 .chat-footer{
-    display:flex;
-    align-items:center;
-    padding:8px;
-    background:#f0f2f5;
-    flex-shrink:0;
-    width:100%;
+    display:flex !important;
+    background:red !important;
+    height:60px !important;
 }
 
 .footer-box{
