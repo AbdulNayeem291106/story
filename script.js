@@ -209,7 +209,6 @@ document.getElementById("pin-screen");
 
 const pinBox =
 document.querySelector(".pin-box");
-console.log(pinBox);
 
 
 let enteredPin = "";
@@ -294,11 +293,17 @@ unlockScreen();
 
     navigator.vibrate?.(250);
 
-    pinBox.classList.add("shake");
+    pinBox.classList.remove("shake");
 
-    setTimeout(()=>{
-        pinBox.classList.remove("shake");
-    },450);
+// Force the browser to restart the animation
+void pinBox.offsetWidth;
+
+pinBox.classList.add("shake");
+
+setTimeout(() => {
+    pinBox.classList.remove("shake");
+}, 450);
+       
 
 } 
    
