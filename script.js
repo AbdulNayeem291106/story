@@ -37,9 +37,7 @@ const images = [
     "photo10.jpg"    
     
 ];    
-    
-    
-    
+   
 /* =========================    
    Scene Elements    
 ========================= */    
@@ -203,26 +201,81 @@ window.onload = ()=>{
 /* =========================    
    Unlock Screen    
 ========================= */    
-    
-    
 const lockScreen =    
 document.getElementById("lock-screen");    
-    
-    
-lockScreen.addEventListener(    
-"click",    
-()=>{    
-    
-    unlockScreen();    
-    
-});    
-    
-function unlockScreen(){    
-    
-    showScene(scenes.chat);    
-    
-    startChat();    
-    
+
+const pinScreen =
+document.getElementById("pin-screen");
+let enteredPin = "";
+const correctPin = "0369";
+  
+lockScreen.addEventListener("click",()=>{
+    pinScreen.style.display="flex";
+});
+
+function pressPin(number){
+
+    if(enteredPin.length>=4) return;
+
+    enteredPin+=number;
+
+    updateDots();
+
+}
+
+function clearPin(){
+
+    enteredPin=enteredPin.slice(0,-1);
+
+    updateDots();
+
+}
+
+function updateDots(){
+
+    let dots="";
+
+    for(let i=0;i<4;i++){
+
+        dots+=
+
+        i<enteredPin.length
+
+        ?"● "
+
+        :"○ ";
+
+    }
+
+    document.getElementById("pin-dots").innerHTML=dots;
+
+}
+
+function checkPin(){
+
+    if(enteredPin===correctPin){
+
+        pinScreen.style.display="none";
+
+        unlockScreen();
+
+    }
+
+    else{
+
+        enteredPin="";
+
+        updateDots();
+
+        navigator.vibrate?.(250);
+
+    }
+
+}
+
+function unlockScreen(){       
+    showScene(scenes.chat);      
+    startChat();     
 }    
     
 /* =========================    
