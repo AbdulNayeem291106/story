@@ -1431,18 +1431,16 @@ audio{
 }
 
 .pin-box{
-
     width:320px;
-
     background:rgba(30,30,30,.85);
-
     border-radius:25px;
-
     padding:25px;
-
     text-align:center;
 
-}
+    position:relative;
+    transform:translateX(0);
+} 
+
 
 .pin-box h2{
 
@@ -1505,26 +1503,21 @@ audio{
 ========================== */
 
 .pin-box.shake{
-    animation: shake 0.45s ease;
-    will-change: transform;
+    animation: pinShake .5s;
 }
 
-@keyframes shake{
+@keyframes pinShake{
 
-    0%   { transform: translateX(0); }
+    0%{ left:0; }
 
-    15%  { transform: translateX(-10px); }
+    20%{ left:-12px; }
 
-    30%  { transform: translateX(10px); }
+    40%{ left:12px; }
 
-    45%  { transform: translateX(-8px); }
+    60%{ left:-12px; }
 
-    60%  { transform: translateX(8px); }
+    80%{ left:12px; }
 
-    75%  { transform: translateX(-5px); }
-
-    90%  { transform: translateX(5px); }
-
-    100% { transform: translateX(0); }
+    100%{ left:0; }
 
 }
