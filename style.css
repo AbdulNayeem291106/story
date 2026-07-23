@@ -1404,4 +1404,100 @@ audio{
 
         fadeIn 2s ease;
 
-  }
+  } 
+
+/* ==========================
+   PIN Lock Screen
+========================== */
+
+.pin-screen{
+
+    position:absolute;
+
+    inset:0;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(0,0,0,.55);
+
+    backdrop-filter:blur(8px);
+
+    z-index:999;
+
+}
+
+.pin-box{
+
+    width:320px;
+
+    background:rgba(30,30,30,.85);
+
+    border-radius:25px;
+
+    padding:25px;
+
+    text-align:center;
+
+}
+
+.pin-box h2{
+
+    color:#fff;
+
+    margin-bottom:20px;
+
+}
+
+.pin-dots{
+
+    color:white;
+
+    font-size:34px;
+
+    letter-spacing:12px;
+
+    margin-bottom:25px;
+
+}
+
+.pin-keypad{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:15px;
+
+}
+
+.pin-keypad button{
+
+    width:70px;
+
+    height:70px;
+
+    margin:auto;
+
+    border:none;
+
+    border-radius:50%;
+
+    font-size:26px;
+
+    background:rgba(255,255,255,.15);
+
+    color:white;
+
+}
+
+.pin-keypad button:active{
+
+    transform:scale(.95);
+
+} 
+
+
