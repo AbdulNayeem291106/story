@@ -774,15 +774,24 @@ audio{
     cursor: pointer;
 }
 
-.chat-body {
-    flex: 1;
-    overflow-y: auto;
-    padding: 16px;
-    background: #e5ddd5;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
+.chat-body{
+
+    flex:1;
+
+    overflow-y:auto;
+
+    padding:16px;
+
+    background:#e5ddd5;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:8px;
+
+}  
+
 .message{
     display:flex;
     margin-bottom:8px;
