@@ -206,9 +206,16 @@ document.getElementById("lock-screen");
 
 const pinScreen =
 document.getElementById("pin-screen");
+
+const pinBox =
+document.querySelector(".pin-box");
+
 let enteredPin = "";
+
 const correctPin = "0369";
-  
+
+
+
 let startY = 0;
 
 lockScreen.addEventListener("touchstart", function(e){
@@ -279,15 +286,22 @@ unlockScreen();
 
     else{
 
-        enteredPin="";
+    enteredPin = "";
 
-        updateDots();
+    updateDots();
 
-        navigator.vibrate?.(250);
+    navigator.vibrate?.(250);
 
-    }
+    pinBox.classList.add("shake");
 
+    setTimeout(()=>{
+        pinBox.classList.remove("shake");
+    },450);
+
+} 
+   
 }
+
 
 function unlockScreen(){
 
