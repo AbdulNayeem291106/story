@@ -700,11 +700,45 @@ audio{
     flex: 1;
 }
 
-.back-btn {
-    font-size: 24px;
-    cursor: pointer;
-}
+.back-icon{
 
+    width:28px;
+    height:28px;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    font-size:18px;
+
+    transform:translateY(-1px);
+
+    flex-shrink:0;
+
+} 
+.profile-icon{
+
+    width:36px;
+    height:36px;
+
+    border-radius:50%;
+
+    background:#ffffff;
+
+    color:#666;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:22px;
+
+    line-height:1;
+
+}
 .contact-info {
     display: flex;
     flex-direction: column;
@@ -820,18 +854,25 @@ audio{
 
 /* Double ticks */
 
-.msg-status{
+..msg-status{
 
     font-size:10px;
 
-    color:#53bdeb;
+    color:#cccccc;
 
     margin-left:4px;
 
     display:inline-block;
 
+    transition:color .35s ease;
+
 }
 
+.msg-status.read{
+
+    color:#53bdeb;
+
+} 
 
 /* =====================================================
    Part 2A-3
