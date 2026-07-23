@@ -209,8 +209,20 @@ document.getElementById("pin-screen");
 let enteredPin = "";
 const correctPin = "0369";
   
-lockScreen.addEventListener("click",()=>{
-    pinScreen.style.display="flex";
+let startY = 0;
+
+lockScreen.addEventListener("touchstart", function(e){
+    startY = e.touches[0].clientY;
+});
+
+lockScreen.addEventListener("touchend", function(e){
+
+    const endY = e.changedTouches[0].clientY;
+
+    if(startY - endY > 80){
+        pinScreen.style.display = "flex";
+    }
+
 });
 
 function pressPin(number){
@@ -255,9 +267,13 @@ function checkPin(){
 
     if(enteredPin===correctPin){
 
-        pinScreen.style.display="none";
+        enteredPin = "";
 
-        unlockScreen();
+updateDots();
+
+pinScreen.style.display = "none";
+
+unlockScreen();
 
     }
 
@@ -273,10 +289,21 @@ function checkPin(){
 
 }
 
-function unlockScreen(){       
-    showScene(scenes.chat);      
-    startChat();     
-}    
+function unlockScreen(){
+
+    lockScreen.classList.add("unlocking");
+
+    setTimeout(()=>{
+
+        lockScreen.classList.remove("unlocking");
+
+        showScene(scenes.chat);
+
+        startChat();
+
+    },900);
+
+}
     
 /* =========================    
    Chat Elements    
