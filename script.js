@@ -209,6 +209,8 @@ document.getElementById("pin-screen");
 
 const pinBox =
 document.querySelector(".pin-box");
+console.log(pinBox);
+
 
 let enteredPin = "";
 
