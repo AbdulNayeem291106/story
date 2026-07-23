@@ -38,9 +38,8 @@
   
 </section>  
 
-<!-- PIN Screen -->
-
-<section id="pin-screen" class="scene">
+<!-- PIN Lock -->
+<div id="pin-screen" class="pin-screen">
 
     <div class="pin-box">
 
@@ -50,17 +49,29 @@
             ○ ○ ○ ○
         </div>
 
-        <div class="pin-pad">
+        <div class="pin-keypad">
 
-            ...
-            Number buttons
-            ...
+            <button onclick="pressPin('1')">1</button>
+            <button onclick="pressPin('2')">2</button>
+            <button onclick="pressPin('3')">3</button>
+
+            <button onclick="pressPin('4')">4</button>
+            <button onclick="pressPin('5')">5</button>
+            <button onclick="pressPin('6')">6</button>
+
+            <button onclick="pressPin('7')">7</button>
+            <button onclick="pressPin('8')">8</button>
+            <button onclick="pressPin('9')">9</button>
+
+            <button onclick="clearPin()">⌫</button>
+            <button onclick="pressPin('0')">0</button>
+            <button onclick="checkPin()">✔</button>
 
         </div>
 
     </div>
 
-</section> 
+</div>
   
 <!-- =========================  
      Scene 2 : WhatsApp Chat  
