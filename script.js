@@ -294,16 +294,8 @@ unlockScreen();
     navigator.vibrate?.(250);
 
     pinBox.classList.remove("shake");
-
-// Force the browser to restart the animation
 void pinBox.offsetWidth;
-
 pinBox.classList.add("shake");
-
-setTimeout(() => {
-    pinBox.classList.remove("shake");
-}, 450);
-       
 
 } 
    
